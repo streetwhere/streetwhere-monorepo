@@ -1,49 +1,26 @@
 {
-  "name": "@acme/ui",
-  "version": "0.0.1",
-  "repository": "https://github.com/vercel/examples.git",
-  "license": "MIT",
+  "name": "@repo/ui",
+  "version": "0.0.0",
   "private": true,
-  "scripts": {
-    "lint": "TIMING=1 eslint \"**/*.{ts,tsx,js,jsx}\" --fix",
-    "clean": "rm -rf .turbo"
-  },
-  "sideEffects": false,
-  "type": "module",
   "exports": {
-    ".": "./src/index.ts",
-    "./*": [
-      "./src/*.ts",
-      "./src/*.tsx",
-      "./src/*/index.ts"
-    ],
-    "./tailwind": {
-      "require": "./src/tailwind.cjs"
-    }
+    "./button": "./src/button.tsx",
+    "./card": "./src/card.tsx",
+    "./code": "./src/code.tsx"
   },
-  "files": [
-    "src"
-  ],
-  "typesVersions": {
-    "*": {
-      "*": [
-        "src/*",
-        "src/*/index"
-      ]
-    }
-  },
-  "peerDependencies": {
-    "next": "*",
-    "react": "^17.0.0 || ^18.0.0-0",
-    "react-dom": "^17.0.0 || ^18.0.0-0"
-  },
-  "dependencies": {
-    "@swc/helpers": "^0.4.12",
-    "clsx": "^1.1.1"
+  "scripts": {
+    "lint": "eslint . --max-warnings 0",
+    "generate:component": "turbo gen react-component"
   },
   "devDependencies": {
-    "@types/react": "latest",
-    "eslint": "^8.11.0",
-    "typescript": "4.8.4"
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@turbo/gen": "^1.11.3",
+    "@types/node": "^20.10.6",
+    "@types/eslint": "^8.56.1",
+    "@types/react": "^18.2.46",
+    "@types/react-dom": "^18.2.18",
+    "eslint": "^8.56.0",
+    "react": "^18.2.0",
+    "typescript": "^5.3.3"
   }
 }
