@@ -1,0 +1,9 @@
+{
+	"extends": "@",
+	"compilerOptions": {
+		"module": "commonjs",
+		"target": "ES2021",
+		"outDir": "./dist"
+	},
+	"exclude": ["node_modules"]
+}
