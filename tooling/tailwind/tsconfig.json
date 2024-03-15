@@ -1,13 +1,9 @@
 {
 	"extends": "@streetwhere/typescript-config/base.json",
 	"compilerOptions": {
-		"baseUrl": ".",
-		"paths": {
-			"~/*": ["./src/*"]
-		},
 		"tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json",
 		"incremental": true
 	},
-	"include": [".", "../../reset.d.ts"],
+	"include": ["."],
 	"exclude": ["node_modules"]
 }

@@ -1,17 +1,28 @@
 {
-  "$schema": "https://turbo.build/schema.json",
-  "globalDependencies": ["**/.env.*local"],
-  "pipeline": {
-    "build": {
-      "dependsOn": ["^build"],
-      "outputs": [".next/**", "!.next/cache/**"]
-    },
-    "lint": {
-      "dependsOn": ["^lint"]
-    },
-    "dev": {
-      "cache": false,
-      "persistent": true
-    }
-  }
+	"$schema": "https://turborepo.org/schema.json",
+	"globalDependencies": ["**/.env.local"],
+	"pipeline": {
+		"build": {
+			"dependsOn": ["^build"],
+			"outputs": [
+				".next/**",
+				"!.next/cache/**",
+				"next-env.d.ts",
+				".expo/**",
+				".output/**",
+				".vercel/output/**"
+			]
+		},
+		"dev": {
+			"persistent": true,
+			"cache": false
+		},
+		"push": {
+			"cache": false
+		},
+		"clean": {
+			"cache": false
+		}
+	},
+	"globalEnv": ["SUPABASE_DATABASE_URL"]
 }

@@ -1,0 +1,9 @@
+{
+    "extends": "@streetwhere/typescript-config/base.json",
+    "compilerOptions": {
+      "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json",
+      "incremental": true
+    },
+    "include": ["src", "drizzle.config.ts"],
+    "exclude": ["node_modules"]
+  }

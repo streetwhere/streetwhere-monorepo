@@ -1,0 +1,20 @@
+{
+	"name": "@streetwhere/supabase",
+	"version": "0.1.0",
+	"private": true,
+	"type": "module",
+	"exports": {
+		".": "./src/index.ts"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"dependencies": {
+		"@supabase/supabase-js": "^2.39.7"
+	},
+	"devDependencies": {
+		"@streetwhere/biome-config": "workspace:^0.1.0",
+		"@streetwhere/typescript-config": "workspace:0.1.0"
+	},
+	"license": "MIT"
+}
