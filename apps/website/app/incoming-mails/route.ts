@@ -10,5 +10,5 @@ export async function POST(request: Request) {
 	console.log("to: ", to);
 	console.log("subject: ", subject);
 
-	return "success";
+	return new Response("success");
 }
