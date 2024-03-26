@@ -1,4 +1,4 @@
-import { Message } from "imap-simple";
+import type { Message } from "imap-simple";
 import { simpleParser } from "mailparser";
 import * as _ from "radash";
 

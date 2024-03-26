@@ -1,31 +1,45 @@
 {
 	"name": "@streetwhere/mail",
+	"private": true,
 	"version": "0.1.0",
+	"type": "module",
 	"scripts": {
-		"dev": "nodemon"
+		"dev": "nodemon -w src/server -x tsx src/server/main.ts",
+		"start": "NODE_ENV=production tsx src/server/main.ts",
+		"build": "rimraf dist && vite build",
+		"clean": "rimraf dist node_modules"
 	},
 	"dependencies": {
 		"@streetwhere/drizzle": "workspace:^0.1.0",
 		"@streetwhere/supabase": "workspace:^0.1.0",
+		"@tanstack/react-query": "^5.28.4",
 		"cheerio": "1.0.0-rc.12",
+		"express": "^4.18.2",
 		"imap-simple": "^5.1.0",
 		"mailparser": "^3.6.9",
-		"pino": "^8.19.0",
-		"pino-pretty": "^10.3.1",
+		"million": "^3.0.6",
 		"radash": "^12.1.0",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
 		"sharp": "^0.33.2",
-		"uuid": "^9.0.1"
+		"tailwindcss": "4.0.0-alpha.9",
+		"tsx": "^4.3.0",
+		"typescript": "^5.3.2",
+		"uuid": "^9.0.1",
+		"vite-express": "*",
+		"zustand": "^4.5.2"
 	},
 	"devDependencies": {
-		"@streetwhere/typescript-config": "workspace:^0.1.0",
-		"@types/cheerio": "^0.22.35",
+		"@tailwindcss/vite": "4.0.0-alpha.9",
+		"@types/express": "^4.17.21",
 		"@types/imap-simple": "^4.2.9",
 		"@types/mailparser": "^3.4.4",
-		"@types/node": "^20",
+		"@types/node": "^20.9.3",
+		"@types/react": "^18.0.38",
+		"@types/react-dom": "^18.2.16",
 		"@types/uuid": "^9.0.8",
-		"nodemon": "^3.1.0",
-		"tsx": "^4.7.1",
-		"typescript": "^5"
-	},
-	"license": "MIT"
+		"@vitejs/plugin-react-swc": "^3.6.0",
+		"nodemon": "^3.0.1",
+		"vite": "^5.0.2"
+	}
 }

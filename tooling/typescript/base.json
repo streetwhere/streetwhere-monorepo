@@ -11,11 +11,16 @@
 		"module": "esnext",
 		"moduleResolution": "Bundler",
 		"resolveJsonModule": true,
-		"isolatedModules": true,
 		"moduleDetection": "force",
 		"jsx": "preserve",
 		"incremental": true,
-		"noUncheckedIndexedAccess": true
+		"noUncheckedIndexedAccess": true,
+		"isolatedModules": true,
+		"suppressImplicitAnyIndexErrors": false,
+		"noImplicitAny": true,
+		"strictNullChecks": true,
+		"noUnusedLocals": false,
+		"noUnusedParameters": false
 	},
 	"exclude": ["node_modules", "build", "dist", ".next", ".expo"]
 }

@@ -1,12 +1,12 @@
 import type { ImapSimple } from "imap-simple";
 import type { FetchOptions } from "imap";
-import { parseMails } from "~/mailparser";
+import { parseMails } from "./parser.js";
 import * as _ from "radash";
 import {
 	fetchImagesToAttachment,
 	parseImagesFromHtml,
-} from "~/attachments/scraper";
-import { compressAttachments } from "~/attachments/comrpess";
+} from "../attachments/scraper.js";
+import { compressAttachments } from "../attachments/comrpess.js";
 
 export async function recieveUnseenMails(
 	connection: ImapSimple,

@@ -4,11 +4,12 @@
 	"private": "true",
 	"type": "module",
 	"exports": {
-		".": "./src/index.ts",
+		".": "./src/index.mts",
 		"./schema": "./src/schema.ts"
 	},
 	"scripts": {
-		"push": "drizzle-kit push:pg"
+		"push": "drizzle-kit push:pg",
+		"clean": "rimraf node_modules"
 	},
 	"license": "MIT",
 	"dependencies": {

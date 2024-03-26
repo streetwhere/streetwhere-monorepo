@@ -8,8 +8,16 @@
 	"version": "0.1.0",
 	"scripts": {
 		"build": "dotenvx run --env-file=\".env.local\" -- turbo build --remote-only=false --summarize=false",
+		"build:docker": "turbo build",
 		"dev": "dotenvx run --env-file=\".env.local\" -- turbo dev --remote-only=false --summarize=false",
-		"push": "dotenvx run --env-file=\".env.local\" -- turbo push --remote-only=false --summarize=false"
+		"push": "dotenvx run --env-file=\".env.local\" -- turbo push --remote-only=false --summarize=false",
+		"start": "dotenvx run --env-file=\".env.local\" -- turbo start --remote-only=false --summarize=false",
+		"start:docker": "turbo start",
+		"clean": "turbo clean && rimraf node_modules .turbo",
+
+		"docker:build": "bin/docker-build.sh",
+		"docker:run": "bin/docker-run.sh",
+		"docker": "pnpm docker:build && pnpm docker:run"
 	},
 	"license": "MIT",
 	"devDependencies": {
@@ -17,9 +25,20 @@
 		"@dotenvx/dotenvx": "^0.24.0",
 		"@streetwhere/biome-config": "workspace:^0.1.0",
 		"@streetwhere/typescript-config": "workspace:^0.1.0",
+		"@total-typescript/ts-reset": "^0.5.1",
 		"dotenv-cli": "^7.3.0",
+		"esbuild": "0.19.12",
+		"rimraf": "^5.0.5",
 		"turbo": "^1.12.4",
-		"typescript": "^5.3.3",
-		"@total-typescript/ts-reset": "^0.5.1"
-	}
+		"typescript": "^5.3.3"
+	},
+	"workspaces": [
+		"tooling/typescript",
+		"tooling/biome",
+		"tooling/tailwind",
+		"packages/drizzle",
+		"packages/supabase",
+		"apps/website",
+		"apps/mail"
+	]
 }

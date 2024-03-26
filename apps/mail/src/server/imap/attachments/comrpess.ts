@@ -1,5 +1,5 @@
-import { createHash } from "crypto";
-import { Attachment } from "mailparser";
+import { createHash } from "node:crypto";
+import type { Attachment } from "mailparser";
 import sharp from "sharp";
 import { v4 } from "uuid";
 import * as _ from "radash";

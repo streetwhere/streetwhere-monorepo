@@ -6,7 +6,8 @@
 		"dev": "next dev --turbo",
 		"build": "next build",
 		"start": "next start",
-		"lint": "next lint"
+		"lint": "next lint",
+		"clean": "rimraf node_modules .next .turbo"
 	},
 	"dependencies": {
 		"@streetwhere/drizzle": "workspace:^0.1.0",

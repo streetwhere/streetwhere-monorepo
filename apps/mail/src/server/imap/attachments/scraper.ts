@@ -1,6 +1,5 @@
 import { load } from "cheerio";
-import { exec } from "child_process";
-import { Attachment, ParsedMail } from "mailparser";
+import type { Attachment, ParsedMail } from "mailparser";
 import * as _ from "radash";
 
 const BLACKLIST = ["trk.klclick.com", "trk.klclick1.com"];
