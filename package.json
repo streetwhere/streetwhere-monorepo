@@ -1,44 +1,36 @@
 {
-	"name": "streetwhere-monorepo",
+	"name": "@streetwhere/monorepo",
 	"private": "true",
+	"version": "0.1.0",
+	"license": "MIT",
 	"engines": {
 		"node": ">=18.18.0"
 	},
 	"packageManager": "pnpm@8.7.6",
-	"version": "0.1.0",
 	"scripts": {
-		"build": "dotenvx run --env-file=\".env.local\" -- turbo build --remote-only=false --summarize=false",
-		"build:docker": "turbo build",
-		"dev": "dotenvx run --env-file=\".env.local\" -- turbo dev --remote-only=false --summarize=false",
-		"push": "dotenvx run --env-file=\".env.local\" -- turbo push --remote-only=false --summarize=false",
-		"start": "dotenvx run --env-file=\".env.local\" -- turbo start --remote-only=false --summarize=false",
-		"start:docker": "turbo start",
-		"clean": "turbo clean && rimraf node_modules .turbo",
-
-		"docker:build": "bin/docker-build.sh",
-		"docker:run": "bin/docker-run.sh",
-		"docker": "pnpm docker:build && pnpm docker:run"
+		"dev": "WATCH=true pnpm with-env pnpm -r --parallel dev",
+		"build": "pnpm with-env pnpm -r build",
+		"db:push": "pnpm with-env pnpm -r push",
+		"db:generate": "pnpm with-env pnpm -r generate",
+		"lint": "pnpm lint:oxlint & pnpm lint:biome",
+		"lint:oxlint": "oxlint --import-plugin --nextjs-plugin --react-perf-plugin",
+		"lint:biome": "biome lint ./packages ./apps",
+		"with-env": "dotenvx run --env-file=.env.local --"
 	},
-	"license": "MIT",
+	"bin": {
+		"mail-docker": "./bin/docker"
+	},
 	"devDependencies": {
-		"@biomejs/biome": "^1.5.3",
-		"@dotenvx/dotenvx": "^0.24.0",
-		"@streetwhere/biome-config": "workspace:^0.1.0",
-		"@streetwhere/typescript-config": "workspace:^0.1.0",
+		"@biomejs/biome": "^1.6.3",
+		"@dotenvx/dotenvx": "^0.27.1",
 		"@total-typescript/ts-reset": "^0.5.1",
-		"dotenv-cli": "^7.3.0",
-		"esbuild": "0.19.12",
-		"rimraf": "^5.0.5",
-		"turbo": "^1.12.4",
-		"typescript": "^5.3.3"
+		"concurrently": "^8.2.2",
+		"dotenv": "^16.4.5",
+		"dotenvx": "link:@types/@dotenvx/dotenvx",
+		"oxlint": "^0.2.14"
 	},
-	"workspaces": [
-		"tooling/typescript",
-		"tooling/biome",
-		"tooling/tailwind",
-		"packages/drizzle",
-		"packages/supabase",
-		"apps/website",
-		"apps/mail"
-	]
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/streetwhere/streetwhere-monorepo"
+	}
 }

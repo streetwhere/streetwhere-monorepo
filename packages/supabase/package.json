@@ -3,8 +3,9 @@
 	"version": "0.1.0",
 	"private": true,
 	"type": "module",
+	"license": "MIT",
 	"exports": {
-		".": "./src/index.ts"
+		".": "./index.ts"
 	},
 	"scripts": {
 		"clean": "rimraf node_modules"
@@ -13,8 +14,6 @@
 		"@supabase/supabase-js": "^2.39.7"
 	},
 	"devDependencies": {
-		"@streetwhere/biome-config": "workspace:^0.1.0",
-		"@streetwhere/typescript-config": "workspace:0.1.0"
-	},
-	"license": "MIT"
+		"@types/node": "^20.11.30"
+	}
 }

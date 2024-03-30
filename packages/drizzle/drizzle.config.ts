@@ -5,7 +5,7 @@ const connectionString = process.env.SUPABASE_DATABASE_URL;
 if (!connectionString) throw Error("Connection string not found");
 
 export default {
-	schema: "./src/schema.ts",
+	schema: "./schema.ts",
 	driver: "pg",
 	dbCredentials: {
 		connectionString,

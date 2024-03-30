@@ -1,0 +1,50 @@
+#!/usr/bin/env node
+const { spawn } = require("node:child_process");
+require("dotenv").config({ path: "../.env.local" });
+
+const [, , ...args] = process.argv;
+const DOCKER_FILE = ["-f", ".docker/Dockerfile.mail"];
+const DOCKER_TAG = ["-t", "streetwheremail-test:latest"];
+
+switch (args[0]) {
+	case "build": {
+		exec("docker", [
+			"build",
+			"--pull",
+			"--rm",
+			...DOCKER_FILE,
+			...DOCKER_TAG,
+			".",
+		]);
+		break;
+	}
+	case "run": {
+		exec("dotenvx", [
+			"run",
+			"--env-file=.env.local",
+			"--",
+			"docker",
+			"run",
+			"--rm",
+			"-d",
+			"-P",
+			...env("SUPABASE_ANON_KEY", "SUPABASE_DATABASE_URL", "SUPABASE_URL"),
+			DOCKER_TAG[1],
+		]);
+		break;
+	}
+	default: {
+		console.error("!! Not valid command !!");
+	}
+}
+
+async function exec(command, args) {
+	const child = spawn(command, args);
+
+	child.stderr.pipe(process.stderr);
+	child.stdout.pipe(process.stdout);
+}
+
+function env(...envs) {
+	return [].concat(...envs.map((env) => ["--env", env]));
+}

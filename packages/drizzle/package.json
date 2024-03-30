@@ -1,24 +1,23 @@
 {
 	"name": "@streetwhere/drizzle",
 	"version": "0.1.0",
-	"private": "true",
+	"private": true,
 	"type": "module",
+	"license": "MIT",
 	"exports": {
-		".": "./src/index.mts",
-		"./schema": "./src/schema.ts"
+		".": "./index.ts"
 	},
 	"scripts": {
+		"generate": "drizzle-kit generate:pg",
 		"push": "drizzle-kit push:pg",
 		"clean": "rimraf node_modules"
 	},
-	"license": "MIT",
 	"dependencies": {
 		"drizzle-orm": "^0.29.4",
 		"postgres": "^3.4.3"
 	},
 	"devDependencies": {
-		"@streetwhere/biome-config": "workspace:^0.1.0",
-		"@streetwhere/typescript-config": "workspace:0.1.0",
+		"@types/node": "^20.11.30",
 		"drizzle-kit": "^0.20.14"
 	}
 }

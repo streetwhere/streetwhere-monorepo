@@ -1,0 +1,29 @@
+{
+	"name": "@streetwhere/web",
+	"version": "0.1.0",
+	"private": true,
+	"type": "commonjs",
+	"license": "MIT",
+	"scripts": {
+		"dev": "next dev",
+		"build": "pnpm with-env pnpm next build",
+		"start": "next start",
+		"lint": "next lint",
+		"with-env": "dotenvx run --env-file=../../.env.local --"
+	},
+	"dependencies": {
+		"million": "^3.0.6",
+		"next": "14.1.4",
+		"react": "^18",
+		"react-dom": "^18",
+
+		"@streetwhere/drizzle": "workspace:^0.1.0",
+		"@streetwhere/supabase": "workspace:^0.1.0"
+	},
+	"devDependencies": {
+		"@types/node": "^20",
+		"@types/react": "^18",
+		"@types/react-dom": "^18",
+		"typescript": "^5"
+	}
+}

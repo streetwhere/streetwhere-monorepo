@@ -1,8 +1,0 @@
-{
-	"recommendations": [
-		"yoavbls.pretty-ts-errors",
-		"biomejs.biome",
-		"oxc.oxc-vscode",
-		"christian-kohler.path-intellisense"
-	]
-}

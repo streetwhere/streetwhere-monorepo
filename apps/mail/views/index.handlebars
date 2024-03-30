@@ -1,0 +1,16 @@
+<header hx-get="/api/imap/connected" hx-trigger="load delay:0.5s">
+    loading
+</header>
+
+<div hx-get="/api/mail/list" hx-trigger="load delay:0.5s">
+    loading
+</div>
+
+
+<div x-data="{ open: false }">
+    <button @click="open = !open">Expand</button>
+ 
+    <span x-show="open">
+        Content...
+    </span>
+</div>
