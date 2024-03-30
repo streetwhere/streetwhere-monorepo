@@ -46,4 +46,4 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          file: {context}/.docker/Dockerfile.mail
+          file: .docker/Dockerfile.mail
