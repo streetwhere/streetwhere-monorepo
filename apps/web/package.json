@@ -5,20 +5,21 @@
 	"type": "commonjs",
 	"license": "MIT",
 	"scripts": {
-		"dev": "next dev",
+		"dev": "pnpm with-env pnpm next dev",
 		"build": "pnpm with-env pnpm next build",
 		"start": "next start",
 		"lint": "next lint",
 		"with-env": "dotenvx run --env-file=../../.env.local --"
 	},
 	"dependencies": {
+		"@streetwhere/drizzle": "workspace:^0.1.0",
+		"@streetwhere/supabase": "workspace:^0.1.0",
+		"@vercel/analytics": "^1.2.2",
+		"@vercel/speed-insights": "^1.0.10",
 		"million": "^3.0.6",
 		"next": "14.1.4",
 		"react": "^18",
-		"react-dom": "^18",
-
-		"@streetwhere/drizzle": "workspace:^0.1.0",
-		"@streetwhere/supabase": "workspace:^0.1.0"
+		"react-dom": "^18"
 	},
 	"devDependencies": {
 		"@types/node": "^20",
