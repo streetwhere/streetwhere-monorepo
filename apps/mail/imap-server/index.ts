@@ -13,6 +13,10 @@ const DEFAULT_FETCH_OPTIONS = {
 
 const DEFAULT_SEARCH_OPTIONS = ["UNSEEN"];
 
+const password = process.env.SMTP_MAIL_PASSWORD;
+
+if (!password) throw new Error("SMTP Password not defined");
+
 export class Mailserver {
 	private conn: ImapSimple | undefined;
 
@@ -24,7 +28,7 @@ export class Mailserver {
 		const [err, conn] = await _.try(imap.connect)({
 			imap: {
 				user: "mail@streetwhere.app",
-				password: "4r_hYmT96/!T-",
+				password: password,
 				host: "mail.infomaniak.com",
 				port: 993,
 				tls: true,

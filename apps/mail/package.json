@@ -5,9 +5,11 @@
 	"type": "commonjs",
 	"license": "MIT",
 	"scripts": {
-		"dev": "dotenvx run --env-file=../../.env.local -- tsx watch server.ts",
+		"dev": "tsx watch server.ts",
+		"dev:env": "dotenvx run --env-file=../../.env.local -- tsx watch server.ts",
 		"build": "node esbuild.mjs",
-		"start": "dotenvx run --env-file=../../.env.local -- node dist/server.js"
+		"start": "node dist/server.js",
+		"start:env": "dotenvx run --env-file=../../.env.local -- node dist/server.js"
 	},
 	"dependencies": {
 		"@streetwhere/drizzle": "workspace:^0.1.0",

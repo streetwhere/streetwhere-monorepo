@@ -5,8 +5,10 @@
 	"type": "commonjs",
 	"license": "MIT",
 	"scripts": {
-		"dev": "pnpm with-env pnpm next dev",
-		"build": "pnpm with-env pnpm next build",
+		"dev": "next dev",
+		"dev:env": "pnpm with-env pnpm next dev",
+		"build": "next build",
+		"build:env": "pnpm with-env pnpm next build",
 		"start": "next start",
 		"lint": "next lint",
 		"with-env": "dotenvx run --env-file=../../.env.local --"
