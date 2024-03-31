@@ -141,6 +141,9 @@ importers:
       next:
         specifier: 14.1.4
         version: 14.1.4(@babel/core@7.24.3)(react-dom@18.2.0)(react@18.2.0)
+      next-axiom:
+        specifier: ^1.1.1
+        version: 1.1.1(next@14.1.4)(react@18.2.0)
       react:
         specifier: ^18
         version: 18.2.0
@@ -4111,6 +4114,19 @@ packages:
   /neo-async@2.6.2:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
 
+  /next-axiom@1.1.1(next@14.1.4)(react@18.2.0):
+    resolution: {integrity: sha512-0r/TJ+/zetD+uDc7B+2E7WpC86hEtQ1U+DuWYrP/JNmUz+ZdPFbrZgzOSqaZ6TwYbXP56VVlPfYwq1YsKHTHYQ==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      next: '>=13.4'
+      react: '>=18.0.0'
+    dependencies:
+      next: 14.1.4(@babel/core@7.24.3)(react-dom@18.2.0)(react@18.2.0)
+      react: 18.2.0
+      remeda: 1.56.0
+      whatwg-fetch: 3.6.20
+    dev: false
+
   /next-tick@1.1.0:
     resolution: {integrity: sha512-CXdUiJembsNjuToQvxayPZF9Vqht7hewsvy2sOWafLvi2awflj9mOC6bHIg50orX8IJvWKY9wYQ/zB2kogPslQ==}
     dev: true
@@ -4657,6 +4673,10 @@ packages:
     dependencies:
       rc: 1.2.8
     dev: true
+
+  /remeda@1.56.0:
+    resolution: {integrity: sha512-ZGebbddlHYNIc4P6o6B/LRiUIZyuFvO9/aKxKpzzFjJxb9maUmYk5E72VpvAooh5uFw0rSbfygIV3rc49NW2xg==}
+    dev: false
 
   /require-directory@2.1.1:
     resolution: {integrity: sha512-fGxEI7+wsG9xrvdjsrlmL22OMTTiHRwAMroiEeMgq8gzoLC/PQr7RsRDSTLUg/bZAZtF+TVIkHc6/4RIKrui+Q==}
@@ -5285,6 +5305,10 @@ packages:
 
   /webpack-virtual-modules@0.6.1:
     resolution: {integrity: sha512-poXpCylU7ExuvZK8z+On3kX+S8o/2dQ/SVYueKA0D4WEMXROXgY8Ez50/bQEUmvoSMMrWcrJqCHuhAbsiwg7Dg==}
+    dev: false
+
+  /whatwg-fetch@3.6.20:
+    resolution: {integrity: sha512-EqhiFU6daOA8kpjOWTL0olhVOF3i7OrFzSYiGsEMB8GcXS+RrzauAERX65xMeNWVqxA6HXH2m69Z9LaKKdisfg==}
     dev: false
 
   /whatwg-url@5.0.0:

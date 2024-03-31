@@ -1,4 +1,5 @@
 import { Analytics } from "@vercel/analytics/next";
+import { AxiomWebVitals } from "next-axiom";
 import "./globals.css";
 
 export default function RootLayout({
@@ -12,8 +13,9 @@ export default function RootLayout({
 				<title>Streetwhere?</title>
 			</head>
 			<body>
-				{children}
 				<Analytics />
+				<AxiomWebVitals />
+				{children}
 			</body>
 		</html>
 	);

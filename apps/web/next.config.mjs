@@ -1,4 +1,5 @@
 import million from "million/compiler";
+import { withAxiomNextConfig } from "next-axiom";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -20,4 +21,4 @@ const millionConfig = {
 	},
 };
 
-export default million.next(nextConfig, millionConfig);
+export default million.next(withAxiomNextConfig(nextConfig), millionConfig);
