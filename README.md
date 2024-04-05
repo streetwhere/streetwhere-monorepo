@@ -12,7 +12,6 @@
   - [drizzle - Shared database client](packages/drizzle/README.md)
   - [supabase - Shared bucket client](packages/supabase/README.md)
 
-
 ## Links
 
 - [Analytics - Axiom](https://app.axiom.co/streetwhere-7gk1/dashboards/vercel)
@@ -21,4 +20,3 @@
 
 - [Database - Supabase](https://supabase.com/dashboard/project/jvyodvhnyzqjhgpiunta/editor)
 - [Bucket - Supabase](https://supabase.com/dashboard/project/jvyodvhnyzqjhgpiunta/storage/buckets)
-

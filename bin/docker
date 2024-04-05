@@ -3,7 +3,7 @@ const { spawn } = require("node:child_process");
 require("dotenv").config({ path: "../.env.local" });
 
 const [, , ...args] = process.argv;
-const DOCKER_FILE = ["-f", ".docker/Dockerfile.mail"];
+const DOCKER_FILE = ["-f", ".github/workflows/Dockerfile.mail"];
 const DOCKER_TAG = ["-t", "streetwhere/mail:latest"];
 
 switch (args[0]) {
