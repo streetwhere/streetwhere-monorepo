@@ -1,12 +1,12 @@
 import { storage } from "@streetwhere/supabase";
 import type { Attachment } from "mailparser";
 import { z } from "zod";
-import { TxError } from "../util/transactionError";
+import { TxError } from "../../util/transactionError";
 import type { PgTx } from "@streetwhere/drizzle";
 import { schema } from "@streetwhere/drizzle";
 import * as _ from "radash";
 import probe from "probe-image-size";
-import { log } from "imap-server/util/logger";
+import { log } from "../../util/logger";
 
 const { assets: ASSETS } = schema;
 

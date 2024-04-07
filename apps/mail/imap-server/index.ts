@@ -3,7 +3,7 @@ import type { ImapSimple } from "imap-simple";
 import { recieveUnseenMails } from "./mail/handler";
 import * as _ from "radash";
 import { startTransaction } from "./mail/upload";
-import { log } from "./util/logger";
+import { log } from "../util/logger";
 
 const DEFAULT_FETCH_OPTIONS = {
 	bodies: ["HEADER", "TEXT", ""],
@@ -81,6 +81,10 @@ export class Mailserver {
 			DEFAULT_FETCH_OPTIONS,
 			DEFAULT_SEARCH_OPTIONS,
 		);
+
+		if (mails.length === 0) return;
+
+		log.info(`Uploading ${mails.length} mails to database and bucket`);
 
 		for (const mail of mails) {
 			await startTransaction(mail);

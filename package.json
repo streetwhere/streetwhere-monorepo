@@ -24,7 +24,6 @@
 		"@biomejs/biome": "^1.6.3",
 		"@dotenvx/dotenvx": "^0.27.1",
 		"@total-typescript/ts-reset": "^0.5.1",
-		"concurrently": "^8.2.2",
 		"dotenv": "^16.4.5",
 		"dotenvx": "link:@types/@dotenvx/dotenvx",
 		"oxlint": "^0.2.14"

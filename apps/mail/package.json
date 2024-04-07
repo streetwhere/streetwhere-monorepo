@@ -20,7 +20,6 @@
 		"imap": "^0.8.19",
 		"imap-simple": "^5.1.0",
 		"mailparser": "^3.6.9",
-		"morgan": "^1.10.0",
 		"pino": "^8.19.0",
 		"pino-pretty": "^11.0.0",
 		"probe-image-size": "^7.2.3",
@@ -34,14 +33,10 @@
 		"@types/imap": "^0.8.40",
 		"@types/imap-simple": "^4.2.9",
 		"@types/mailparser": "^3.4.4",
-		"@types/morgan": "^1.9.9",
 		"@types/node": "^20.11.30",
 		"@types/probe-image-size": "^7.2.4",
 		"@types/uuid": "^9.0.8",
 		"esbuild": "^0.20.2",
-		"handlebars": "^4.7.8",
-		"handlebars-loader": "^1.7.3",
-		"read-package-json": "^7.0.0",
 		"tsx": "^4.7.1",
 		"typescript": "^5"
 	}
