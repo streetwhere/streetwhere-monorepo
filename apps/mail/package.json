@@ -37,6 +37,7 @@
 		"@types/probe-image-size": "^7.2.4",
 		"@types/uuid": "^9.0.8",
 		"esbuild": "^0.20.2",
+		"read-package-json": "^7.0.0",
 		"tsx": "^4.7.1",
 		"typescript": "^5"
 	}
