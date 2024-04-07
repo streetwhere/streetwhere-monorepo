@@ -7,7 +7,7 @@ import {
 	parseImagesFromHtml,
 } from "../attachments/scraper";
 import { compressAttachments } from "../attachments/compress";
-import { log } from "../util/logger";
+import { log } from "../../util/logger";
 
 export async function recieveUnseenMails(
 	connection: ImapSimple,
@@ -17,6 +17,10 @@ export async function recieveUnseenMails(
 	log.info("Trying to fetch unseen mails");
 
 	const messages = await connection.search(searchOptions, fetchOptions);
+
+	log.info(`Recieved ${messages.length} unseen mails`);
+
+	if (messages.length === 0) return [];
 
 	const mails = await parseMails(messages);
 
@@ -30,5 +34,5 @@ export async function recieveUnseenMails(
 		mail.attachments = await compressAttachments(mail.attachments);
 
 		return mail;
-	});
+	}).finally(() => log.info(`Parsed ${mails.length} mails succesfully`));
 }

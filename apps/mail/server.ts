@@ -2,7 +2,7 @@ import { db, schema } from "@streetwhere/drizzle";
 import express, { Router } from "express";
 import { engine } from "express-handlebars";
 import { Mailserver } from "imap-server";
-import morgan from "morgan";
+import { pinoHttp } from "util/logger";
 
 const DEV = (process.env.NODE_ENV || "development") === "development";
 const PORT = process.env.PORT || 3001;
@@ -14,7 +14,7 @@ try {
 	const imap = new Mailserver();
 
 	// Logger (Morgan)
-	app.use(morgan(DEV ? "dev" : "combined"));
+	app.use(pinoHttp());
 
 	// Handlebars
 	app.engine("handlebars", engine());

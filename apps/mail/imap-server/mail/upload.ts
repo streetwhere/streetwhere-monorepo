@@ -3,7 +3,7 @@ import * as _ from "radash";
 import type { PgTx } from "@streetwhere/drizzle";
 import type { ParsedMail } from "mailparser";
 import { schema } from "@streetwhere/drizzle";
-import { TxError } from "../util/transactionError";
+import { TxError } from "../../util/transactionError";
 import { z } from "zod";
 import {
 	isAttachmentValid,
@@ -11,7 +11,7 @@ import {
 	uploadToBucket,
 	uploadToDatabase,
 } from "../attachments/upload";
-import { log } from "../util/logger";
+import { log } from "../../util/logger";
 
 const { mails: MAILS } = schema;
 
