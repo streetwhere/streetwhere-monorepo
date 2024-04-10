@@ -1,0 +1,23 @@
+{
+	"$schema": "https://raw.githubusercontent.com/SchemaStore/schemastore/master/src/schemas/json/web-manifest.json",
+	"short_name": "streetwhere?",
+	"name": "Streewhere App",
+	"icons": [
+		{
+			"src": "/icon/128",
+			"type": "image/png",
+			"sizes": "128x128"
+		},
+		{
+			"src": "/icon/256",
+			"type": "image/png",
+			"sizes": "256x256"
+		}
+	],
+	"id": "/m",
+	"start_url": "/m",
+	"background_color": "black",
+	"theme_color": "white",
+	"display": "fullscreen",
+	"categories": []
+}

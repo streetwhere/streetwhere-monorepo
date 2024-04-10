@@ -6,9 +6,11 @@ export default async function Home() {
 	const res = await db.select().from(mails);
 
 	return (
-		<main>
+		<main className="divide-y">
 			{res.map((item) => (
-				<p key={item.id}>{item.subject}</p>
+				<p className="p-2 text-center" key={item.id}>
+					{item.subject}
+				</p>
 			))}
 		</main>
 	);
