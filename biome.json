@@ -1,21 +1,25 @@
 {
-    "$schema": "https://biomejs.dev/schemas/1.5.3/schema.json",
-    "organizeImports": {
-      "enabled": false
-    },
-    "linter": {
-      "enabled": true,
-      "rules": {
-        "recommended": true
-      }
-    },
-    "json": {
-      "formatter": {
-        "enabled": true
-      }
-    },
-    "vcs": {
-      "enabled": true,
-      "clientKind": "git"
-    }
-  }
+	"$schema": "https://biomejs.dev/schemas/1.5.3/schema.json",
+	"organizeImports": {
+		"enabled": false
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true
+		},
+		"ignore": ["apps/web/**"]
+	},
+	"json": {
+		"formatter": {
+			"enabled": true
+		}
+	},
+	"vcs": {
+		"enabled": true,
+		"clientKind": "git",
+		"defaultBranch": "main",
+		"useIgnoreFile": true
+	},
+	"files": { "ignoreUnknown": true, "ignore": ["apps/**/*.svelte"] }
+}

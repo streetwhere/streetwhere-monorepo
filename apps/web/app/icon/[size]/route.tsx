@@ -1,45 +1,13 @@
 import { ImageResponse } from "next/og";
+import type { NextRequest } from "next/server";
 
 export const runtime = "edge";
 
-export function generateImageMetadata() {
-	return [
-		// Favicon
-		{
-			contentType: "image/png",
-			size: { width: 16, height: 16 },
-			id: "16",
-		},
-		{
-			contentType: "image/png",
-			size: { width: 180, height: 180 },
-			id: "180",
-		},
-		{
-			contentType: "image/png",
-			size: { width: 192, height: 192 },
-			id: "192",
-		},
-		// Chrome Webstore (Manifest)
-		{
-			contentType: "image/png",
-			size: { width: 128, height: 128 },
-			id: "128",
-		},
-		{
-			contentType: "image/png",
-			size: { width: 256, height: 256 },
-			id: "256",
-		},
-	];
-}
-
-interface IconProps {
-	id: string;
-}
-
-export default function Icon(props: IconProps) {
-	const size = Number(props.id);
+export async function GET(
+	_: NextRequest,
+	{ params }: { params: { size: string } },
+) {
+	const size = Number.parseInt(params.size);
 
 	return new ImageResponse(
 		<div

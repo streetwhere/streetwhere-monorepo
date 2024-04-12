@@ -1,10 +1,9 @@
-import { Analytics } from "@vercel/analytics/next";
-import { AxiomWebVitals } from "next-axiom";
-import { Onest } from "next/font/google";
-
 import type { Metadata, Viewport } from "next";
-
+import { Onest as FontSans } from "next/font/google";
 import "./globals.css";
+import { cn } from "@/lib/utils";
+
+const fontSans = FontSans({ subsets: ["latin"], variable: "--font-sans" });
 
 export const viewport: Viewport = {
 	themeColor: [
@@ -40,8 +39,38 @@ export const metadata: Metadata = {
 		"Streetbrands",
 	],
 	authors: [{ name: "Gabriel Egli", url: "https://gabriel-egli.ch" }],
-	creator: "Gabriel Egli",
-	publisher: "Gabriel Egli",
+	creator: "streetwhere? Team",
+	publisher: "streetwhere?",
+
+	icons: {
+		icon: [
+			{
+				url: "/icon/32",
+				sizes: "32x32",
+				type: "image/png",
+			},
+			{
+				url: "/icon/64",
+				sizes: "64x64",
+				type: "image/png",
+			},
+			{
+				url: "/icon/192",
+				sizes: "192x192",
+				type: "image/png",
+			},
+			{
+				url: "/icon/228",
+				sizes: "228x228",
+				media: "image/png",
+			},
+		],
+		apple: {
+			url: "/icon/180",
+			sizes: "180x180",
+			media: "image/png",
+		},
+	},
 
 	formatDetection: {
 		email: true,
@@ -77,22 +106,19 @@ export const metadata: Metadata = {
 	manifest: "/manifest.json",
 };
 
-const onest = Onest({
-	subsets: ["latin"],
-	display: "swap",
-	variable: "--font-onest",
-});
-
 export default function RootLayout({
 	children,
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en" className={onest.variable}>
-			<body>
-				<Analytics />
-				<AxiomWebVitals />
+		<html lang="en" className="dark">
+			<body
+				className={cn(
+					"min-h-screen bg-background font-sans antialiased",
+					fontSans.variable,
+				)}
+			>
 				{children}
 			</body>
 		</html>
